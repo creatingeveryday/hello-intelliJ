@@ -48,8 +48,8 @@ public class MemoryMemberRepositoryTest {
         repository.save(member2);
 
         //when
-        Member result = repository.findById("hahaha1").get();
-        repository.findById("hahaha1").get();
+        Member result = repository.findByName("hahaha1").get();
+        repository.findByName("hahaha1").get();
 
         //then
         assertThat(result).isEqualTo(member1);
