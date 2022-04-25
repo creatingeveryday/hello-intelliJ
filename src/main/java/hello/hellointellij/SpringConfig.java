@@ -1,6 +1,7 @@
 package hello.hellointellij;
 
 import hello.hellointellij.repository.JdbcMemberRepository;
+import hello.hellointellij.repository.JdbcTemplateMemberRepository;
 import hello.hellointellij.repository.MemberRepository;
 import hello.hellointellij.repository.MemoryMemberRepository;
 import hello.hellointellij.service.MemberService;
@@ -30,6 +31,7 @@ public class SpringConfig {
     public MemberRepository memberRepository(){
 
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource); //개방-폐쇄 원칙(OCP, Open-Closed Principle)
+//        return new JdbcMemberRepository(dataSource); //개방-폐쇄 원칙(OCP, Open-Closed Principle)
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
