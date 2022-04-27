@@ -6,12 +6,14 @@ import hello.hellointellij.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.objenesis.instantiator.basic.NewInstanceInstantiator;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 // 비즈니스로직을 다루는 서비스 계층에서는 비즈니스 처리에 맞는 용어를 선정하여 사용하는 경향. / repo에 쓰는 용어는 저장소에 어울리는 용어를 선정.
 
+@Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
 
