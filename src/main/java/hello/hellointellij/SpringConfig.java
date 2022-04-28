@@ -1,5 +1,6 @@
 package hello.hellointellij;
 
+import hello.hellointellij.aop.TimeTraceAop;
 import hello.hellointellij.repository.*;
 import hello.hellointellij.service.MemberService;
 import net.bytebuddy.asm.Advice;
@@ -40,6 +41,14 @@ public class SpringConfig {
 //        return new MemberService(memberRepository());
         return new MemberService(memberRepository);
     }
+
+    /**
+     * AOP 스프링 빈으로 직접 등록하여 관리해도 하는 방식도 좋을듯?
+     * */
+//    @Bean
+//    public TimeTraceAop timeTraceAop(){
+//        return new TimeTraceAop();
+//    }
 
 //    @Bean
 //    public MemberRepository memberRepository(){
